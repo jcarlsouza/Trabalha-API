@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "d9921612-06c6-42ee-88aa-96a0309b217a",
+		"name": "JOSE_AULA_1509",
+		"description": "Trabalho prático da aula de 15/09/2018.\nJosé Carlos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://www.omdbapi.com/?apikey=2d4f7cdc&t=Matrix",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5137502-8fa7-4b7c-9647-639d0a1c5e49",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Retorno 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 50ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(50);",
+							"});",
+							"pm.test(\"Response time is less than 100ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(100);",
+							"});",
+							"pm.test(\"Response time is less than 150ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(150);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body matches string 1\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"shark\");",
+							"});",
+							"pm.test(\"Body matches string 2\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"sheriff\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body matches string 3\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"beach\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string 4\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"marine\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string 5\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"biologist\");",
+							"});",
+							"",
+							"pm.test(\"JSON body check\", function () {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    tests[\"Verify if Title Jaws\"] = jsonData.Title === \"Jaws\";",
+							"    tests[\"Verify the IMDB ID tt0073195\"] = jsonData.imdbID === \"tt0073195\";",
+							"    tests[\"Verify if release date is 20/Jun/1975\"] = jsonData.Released === \"20 Jun 1975\";",
+							"    tests[\"Verify if it has 3 different genres\"] = jsonData.Genre === \"Adventure, Drama, Thriller\";",
+							"    tests[\"Verify Director Name\"] = jsonData.Director === \"Steven Spielberg\";",
+							"    tests[\"Verify Actors Name\"] = jsonData.Actors === \"Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary\";",
+							"    tests[\"Verify Language\"] = jsonData.Language === \"English\";",
+							"    tests[\"Verify Language\"] = jsonData.Country === \"USA\";",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "t",
+						"value": "Matrix"
+					},
+					{
+						"key": "apikey",
+						"value": "2d4f7cdc"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://www.omdbapi.com/?apikey=2d4f7cdc&t=Jaws",
+					"protocol": "http",
+					"host": [
+						"www",
+						"omdbapi",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "y",
+							"value": "1982",
+							"disabled": true
+						},
+						{
+							"key": "apikey",
+							"value": "2d4f7cdc"
+						},
+						{
+							"key": "t",
+							"value": "Jaws"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://www.omdbapi.com/?apikey=2d4f7cdc&i=tt6468322",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a1d9e731-361a-4dcc-9985-7f22dac3a6fa",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Retorno 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 50ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(50);",
+							"});",
+							"pm.test(\"Response time is less than 100ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(100);",
+							"});",
+							"pm.test(\"Response time is less than 150ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(150);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body matches string 1\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Spain\");",
+							"});",
+							"pm.test(\"Body matches string 2\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"mastermind\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body matches string 3\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"manipulates\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string 4\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"police\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string 5\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"plan\");",
+							"});",
+							"",
+							"pm.test(\"JSON body check\", function () {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    tests[\"Verify if Title Money Heist\"] = jsonData.Title === \"Money Heist\";",
+							"    tests[\"Verify the IMDB ID tt6468322\"] = jsonData.imdbID === \"tt6468322\";",
+							"    tests[\"Verify if release date is 02/May/2017\"] = jsonData.Released === \"02 May 2017\";",
+							"    tests[\"Verify if it has 3 different genres\"] = jsonData.Genre === \"Action, Crime, Mystery\";",
+							"    tests[\"Verify Writer Name\"] = jsonData.Writer === \"Álex Pina\";",
+							"    tests[\"Verify Actors Name\"] = jsonData.Actors === \"Úrsula Corberó, Itziar Ituño, Álvaro Morte, Paco Tous\";",
+							"    tests[\"Verify Language\"] = jsonData.Language === \"Russian, Spanish, Serbian, English\";",
+							"    tests[\"Verify Language\"] = jsonData.Country === \"Spain\";",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://www.omdbapi.com/?apikey=2d4f7cdc&i=tt6468322",
+					"protocol": "http",
+					"host": [
+						"www",
+						"omdbapi",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "2d4f7cdc"
+						},
+						{
+							"key": "i",
+							"value": "tt6468322"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
